@@ -8,7 +8,7 @@ Preciso de um app para manter meu vício por filmes em dia. O app terá duas tel
 Ao clicar em um filme preciso ver todos os detalhes possíveis do filme clicado.
 De tempos em tempos eu gosto de seguir um filme então gostaria de marcar um deles como favorito. (preciso também de um indicativo visual que esse filme é favorito ou não na tela inicial) 
 
-# Requisitos (iOS)
+# Requisitos
  - Codificar em Swift
  - Deve dar suporte ao iOS 9
  - Seguir as diretrizes de interface da Apple (https://developer.apple.com/design/human-interface-guidelines/ios/overview)
@@ -22,7 +22,7 @@ De tempos em tempos eu gosto de seguir um filme então gostaria de marcar um del
     .Detalhes de um filme: https://developers.themoviedb.org/3/movies/get-movie-details
  - Os filmes favoritos serão armazenados de forma segura no dispositivo, usando o Keychain do iOS (https://developer.apple.com/documentation/security/keychain_services) (tutorial: https://www.raywenderlich.com/9240-keychain-services-api-tutorial-for-passwords-in-swift)
  
-# Prototipo
+# Protótipo
 //Anexar telas
 
 # Entrega
