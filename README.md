@@ -2,9 +2,9 @@
 
 # Contexto
 Preciso de um app para manter meu vício por filmes em dia. O app terá duas telas. Na tela inicial preciso de um esquema de abas para mostrar 3 listas: 
-    - Os filmes mais recentes
-    - Os filmes mais populares
-    - Os filmes melhores avaliados
+    * Os filmes mais recentes
+    * Os filmes mais populares
+    * Os filmes melhores avaliados
 Ao clicar em um filme preciso ver todos os detalhes possíveis do filme clicado.
 De tempos em tempos eu gosto de seguir um filme então gostaria de marcar um deles como favorito. (preciso também de um indicativo visual que esse filme é favorito ou não na tela inicial) 
 
