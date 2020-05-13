@@ -24,7 +24,9 @@ De tempos em tempos eu gosto de seguir um filme então gostaria de marcar um del
  - Os filmes favoritos serão armazenados de forma segura no dispositivo, usando o Keychain do iOS (https://developer.apple.com/documentation/security/keychain_services) (tutorial: https://www.raywenderlich.com/9240-keychain-services-api-tutorial-for-passwords-in-swift)
  
 # Protótipo
-//Anexar telas
+![lista filmes](ss/ss1.png)
+![detalhe filme](ss/ss2.png)
+![filme favorito](ss/ss3.png)
 
 # Entrega
 Você deve fazer o fork desse repositório na sua conta e após finalizado o desafio submeter um pull request para avaliação :v:
