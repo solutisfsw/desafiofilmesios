@@ -20,7 +20,7 @@ Na tela inicial quero um botão que me leve diretamente ao filme favorito
  - Todas as requisições estão no movieDB (https://developers.themoviedb.org)
     .Filmes mais populares: https://developers.themoviedb.org/3/movies/get-popular-movies
     .Filmes melhores avaliados: https://developers.themoviedb.org/3/movies/get-top-rated-movies
-    .Filmes mais recentes: https://developers.themoviedb.org/3/movies/get-latest-movie
+    .Filmes mais recentes: https://developers.themoviedb.org/3/movies/get-upcoming
     .Detalhes de um filme: https://developers.themoviedb.org/3/movies/get-movie-details
  - Os filmes favoritos serão armazenados de forma segura no dispositivo, usando o Keychain do iOS (https://developer.apple.com/documentation/security/keychain_services) (tutorial: https://www.raywenderlich.com/9240-keychain-services-api-tutorial-for-passwords-in-swift)
  - Todos as imagens necessárias estão no repositório, bem como as imagens de prototipo (que também se encontram abaixo)
