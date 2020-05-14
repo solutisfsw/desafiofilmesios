@@ -18,10 +18,10 @@ Na tela inicial quero um botão que me leve diretamente ao filme favorito
  - Para o esquema de abas usar o componente de TabBar do UIKit (https://developer.apple.com/design/human-interface-guidelines/ios/bars/tab-bars/) (https://developer.apple.com/documentation/uikit/uitabbar)
  - Nas requisições REST fazer utilizando a API Nativa ou uma biblioteca como o Alamofire (a escolha) (colocar algum indicativo de loading: https://developer.apple.com/design/human-interface-guidelines/ios/app-architecture/loading/)
  - Todas as requisições estão no movieDB (https://developers.themoviedb.org)
-    .Filmes mais populares: https://developers.themoviedb.org/3/movies/get-popular-movies
-    .Filmes melhores avaliados: https://developers.themoviedb.org/3/movies/get-top-rated-movies
-    .Filmes mais recentes: https://developers.themoviedb.org/3/movies/get-upcoming
-    .Detalhes de um filme: https://developers.themoviedb.org/3/movies/get-movie-details
+    - Filmes mais populares: https://developers.themoviedb.org/3/movies/get-popular-movies
+    - Filmes melhores avaliados: https://developers.themoviedb.org/3/movies/get-top-rated-movies
+    - Filmes mais recentes: https://developers.themoviedb.org/3/movies/get-upcoming
+    - Detalhes de um filme: https://developers.themoviedb.org/3/movies/get-movie-details
  - Os filmes favoritos serão armazenados de forma segura no dispositivo, usando o Keychain do iOS (https://developer.apple.com/documentation/security/keychain_services) (tutorial: https://www.raywenderlich.com/9240-keychain-services-api-tutorial-for-passwords-in-swift)
  - Todos as imagens necessárias estão no repositório, bem como as imagens de prototipo (que também se encontram abaixo)
  
