@@ -1,0 +1,6 @@
+framework module Pods_desafiofilmesios {
+  umbrella header "Pods-desafiofilmesios-umbrella.h"
+
+  export *
+  module * { export * }
+}
