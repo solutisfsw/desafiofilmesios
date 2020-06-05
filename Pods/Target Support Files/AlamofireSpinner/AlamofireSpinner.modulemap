@@ -1,0 +1,6 @@
+framework module AlamofireSpinner {
+  umbrella header "AlamofireSpinner-umbrella.h"
+
+  export *
+  module * { export * }
+}

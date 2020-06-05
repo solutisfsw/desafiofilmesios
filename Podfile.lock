@@ -1,0 +1,31 @@
+PODS:
+  - Alamofire (4.9.1)
+  - AlamofireSpinner (0.2.0):
+    - Alamofire (~> 4.0)
+  - KeychainSwift (19.0.0)
+  - SDWebImage (5.8.0):
+    - SDWebImage/Core (= 5.8.0)
+  - SDWebImage/Core (5.8.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - AlamofireSpinner
+  - KeychainSwift
+  - SDWebImage
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - AlamofireSpinner
+    - KeychainSwift
+    - SDWebImage
+
+SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  AlamofireSpinner: f1ad09712b7225575b40779947cc9ef678954906
+  KeychainSwift: a06190cf933ad46b1e0abc3d77d29c06331715c7
+  SDWebImage: 84000f962cbfa70c07f19d2234cbfcf5d779b5dc
+
+PODFILE CHECKSUM: 8531fc8d7f08ae1687be48a141e43f12374f665f
+
+COCOAPODS: 1.9.3
