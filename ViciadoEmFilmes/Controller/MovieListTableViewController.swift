@@ -14,6 +14,8 @@ class MovieListTableViewController: UITableViewController {
     let indicator:UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50));
     var movies:[Movie] = []
 
+    // MARK: LiveCycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.layout()
@@ -26,11 +28,15 @@ class MovieListTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+ 
+    override func viewWillAppear(_ animated: Bool) {
+        self.layout()
+    }
     
     // MARK: UI
     
     func layout(){
-         self.navigationController?.navigationBar.topItem?.title = "Viciados em filmes"
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     func registratorCell(){

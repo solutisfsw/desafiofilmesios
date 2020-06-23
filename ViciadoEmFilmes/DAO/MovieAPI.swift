@@ -11,7 +11,7 @@ import Alamofire
 
 enum EntryPointType {
     case details(Int)
-    case popular, topRated, mostRecent, genre
+    case popular, topRated, mostRecent, genre, favorites
     
     var value: String {
         switch self {
@@ -25,9 +25,12 @@ enum EntryPointType {
             return "/genre/movie/list"
         case .details(let id):
             return "/movie/\(String(id))"
+        default:
+            return ""
         }
     }
 }
+
 
 class MovieAPI {
     
@@ -100,7 +103,7 @@ class MovieAPI {
         return Movie(
             id: id,
             title: title,
-            description: overview,
+            text: overview,
             image: poster_path,
             releaseDate: formatter.date(from: release_date)!,
             genres: genres

@@ -16,8 +16,20 @@ class TabBarControllerViewController: UITabBarController {
         self.populateTabs()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.layout()
+    }
+    
     func layout(){
-        
+         self.navigationController?.navigationBar.topItem?.title = "Viciados em filmes"
+        self.navigationController?.navigationBar.topItem?.rightBarButtonItem = UIBarButtonItem(title: "Favoritos", style: .plain, target: self, action: #selector(self.favoriteButtonTouch(_:)))
+    }
+    
+    @objc func favoriteButtonTouch(_ sender: Any) {
+        let favoritesVC = MovieListTableViewController()
+        favoritesVC.entryPoint = EntryPointType.favorites
+        favoritesVC.title = "Favoritos"
+        self.navigationController?.pushViewController(favoritesVC, animated: true)
     }
     
     func populateTabs(){
@@ -43,6 +55,8 @@ class TabBarControllerViewController: UITabBarController {
         
         viewControllers = [popularVC, mostRecentVC, topRatedVC]
     }
+    
+    
     
 
     /*

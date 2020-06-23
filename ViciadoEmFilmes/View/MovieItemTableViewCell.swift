@@ -17,7 +17,7 @@ class MovieItemTableViewCell: UITableViewCell {
     
     func populateCell(with movie:Movie){
         self.titleLabel.text = movie.title
-        self.descriptionLabel.text = movie.description
+        self.descriptionLabel.text = movie.text
         if let imageURL:URL = URL(string: "https://image.tmdb.org/t/p/w220_and_h330_face\(movie.image)") {
             let options = ImageLoadingOptions(
                 transition: .fadeIn(duration: 0.5)
