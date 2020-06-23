@@ -51,7 +51,7 @@
 		570E271AEB98ADACBEE1AF24 /* Pods-ViciadoEmFilmes-ViciadoEmFilmesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViciadoEmFilmes-ViciadoEmFilmesUITests.debug.xcconfig"; path = "Target Support Files/Pods-ViciadoEmFilmes-ViciadoEmFilmesUITests/Pods-ViciadoEmFilmes-ViciadoEmFilmesUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		580E20AD24A1392C006E019E /* TabBarControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarControllerViewController.swift; sourceTree = "<group>"; };
 		580E20BB24A13E35006E019E /* MovieListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListTableViewController.swift; sourceTree = "<group>"; };
-		5824C17524A0F6FD002F7401 /* ViciadoEmFilmes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViciadoEmFilmes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5824C17524A0F6FD002F7401 /* Viciado em Filmes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Viciado em Filmes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5824C17824A0F6FD002F7401 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5824C17F24A0F6FD002F7401 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5824C18124A0F6FE002F7401 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -143,7 +143,7 @@
 		5824C17624A0F6FD002F7401 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5824C17524A0F6FD002F7401 /* ViciadoEmFilmes.app */,
+				5824C17524A0F6FD002F7401 /* Viciado em Filmes.app */,
 				5824C18B24A0F6FF002F7401 /* ViciadoEmFilmesTests.xctest */,
 				5824C19624A0F6FF002F7401 /* ViciadoEmFilmesUITests.xctest */,
 			);
@@ -244,7 +244,7 @@
 			);
 			name = ViciadoEmFilmes;
 			productName = ViciadoEmFilmes;
-			productReference = 5824C17524A0F6FD002F7401 /* ViciadoEmFilmes.app */;
+			productReference = 5824C17524A0F6FD002F7401 /* Viciado em Filmes.app */;
 			productType = "com.apple.product-type.application";
 		};
 		5824C18A24A0F6FF002F7401 /* ViciadoEmFilmesTests */ = {
@@ -655,7 +655,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.solutis.ViciadoEmFilmes;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Viciado em Filmes";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -674,7 +674,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.solutis.ViciadoEmFilmes;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Viciado em Filmes";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
