@@ -14,7 +14,7 @@ class MovieListTableViewController: UITableViewController, MovieDetailsViewContr
     
     var entryPoint:EntryPointType?
     let indicator:UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50));
-    var movies:[Movie] = []
+    var movies:Array<Movie> = []
     
     // MARK: LiveCycle
     
@@ -63,9 +63,9 @@ class MovieListTableViewController: UITableViewController, MovieDetailsViewContr
         }
     }
     
-    func checkEntryPoint(_ completion:@escaping (_ movies:[Movie]) -> Void){
+    func checkEntryPoint(_ completion: @escaping (_ movies:[Movie]) -> Void){
         let movieAPI = MovieAPI()
-        switch entryPoint {
+        switch self.entryPoint {
         case .mostRecent:
             movieAPI.getMostRecentMovies(completion)
             break

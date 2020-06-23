@@ -25,19 +25,16 @@ class TabBarControllerViewController: UITabBarController {
         
         let popularVC = MovieListTableViewController()
         popularVC.entryPoint = EntryPointType.popular
-        popularVC.title = title
         popularVC.tabBarItem = UITabBarItem(title: "Mais populares", image: nil, tag: 0)
         popularVC.tabBarItem.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: verticalAlign)
         
         let mostRecentVC = MovieListTableViewController()
         mostRecentVC.entryPoint = EntryPointType.mostRecent
-        mostRecentVC.title = title
         mostRecentVC.tabBarItem = UITabBarItem(title: "Mais recentes", image: nil, tag: 1)
         mostRecentVC.tabBarItem.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: verticalAlign)
         
         let topRatedVC = MovieListTableViewController()
         topRatedVC.entryPoint = EntryPointType.topRated
-        topRatedVC.title = title
         topRatedVC.tabBarItem = UITabBarItem(title: "Melhores avaliados", image: nil, tag: 2)
         topRatedVC.tabBarItem.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: verticalAlign)
         
@@ -47,8 +44,7 @@ class TabBarControllerViewController: UITabBarController {
     // MARK: UI
     
     func layout(){
-        let title = "Viciados em filmes"
-        self.navigationController?.navigationBar.topItem?.title = title
+        self.navigationController?.navigationBar.topItem?.title = "Viciados em filmes"
         self.navigationController?.navigationBar.topItem?.rightBarButtonItem = UIBarButtonItem(title: "Favoritos", style: .plain, target: self, action: #selector(self.favoriteButtonTouch(_:)))
     }
     

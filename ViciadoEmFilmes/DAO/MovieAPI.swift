@@ -91,7 +91,7 @@ class MovieAPI {
     private func populateMovie(movieDic: Dictionary<String, Any>) -> Movie? {
         guard let genresId = movieDic["genre_ids"] as? Array<Int> else { return nil }
         let genres = MovieAPI.genres.filter { (genre) -> Bool in
-            genresId.contains(genre.id)
+            return genresId.contains(genre.id)
         }
         guard let id = movieDic["id"] as? Int else { return nil }
         guard let title = movieDic["title"] as? String else { return nil }

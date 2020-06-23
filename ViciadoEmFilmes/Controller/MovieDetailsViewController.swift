@@ -37,10 +37,6 @@ class MovieDetailsViewController: UIViewController, UIGestureRecognizerDelegate 
         self.checkFavorite()
     }
     
-    @IBAction func backButtonTouch(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
-    }
-    
     // MARK: LiveCycle
     
     override func viewDidLoad() {
