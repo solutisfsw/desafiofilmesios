@@ -109,6 +109,7 @@ class MovieListTableViewController: UITableViewController, MovieDetailsViewContr
         
         detailsViewController.movie = self.movies[indexPath.row]
         detailsViewController.delegate = self
+        detailsViewController.title = "Detalhes"
         self.navigationController?.pushViewController(detailsViewController, animated: true)
     }
     
