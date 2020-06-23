@@ -11,9 +11,13 @@ import Nuke
 
 class MovieItemTableViewCell: UITableViewCell {
 
+    // MARK: @IBOutlet
+    
     @IBOutlet weak var thumbImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    
+    // MARK: Data
     
     func populateCell(with movie:Movie){
         self.titleLabel.text = movie.title
@@ -28,13 +32,10 @@ class MovieItemTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }

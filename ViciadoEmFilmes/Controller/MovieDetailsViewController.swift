@@ -9,10 +9,17 @@
 import UIKit
 import Nuke
 
+protocol MovieDetailsViewControllerDelegate {
+    func removeMovie(id:Int)
+}
+
 class MovieDetailsViewController: UIViewController, UIGestureRecognizerDelegate {
 
     // MARK: Attributes
+    
     let favoriteKeychain = FavoriteKeychain()
+    var delegate:MovieDetailsViewControllerDelegate?
+    var movie:Movie?
     
     // MARK: @IBOutlet
     
@@ -34,10 +41,6 @@ class MovieDetailsViewController: UIViewController, UIGestureRecognizerDelegate 
         self.navigationController?.popViewController(animated: true)
     }
     
-    // MARK: Attributes
-    
-    var movie:Movie?
-    
     // MARK: LiveCycle
     
     override func viewDidLoad() {
@@ -53,16 +56,7 @@ class MovieDetailsViewController: UIViewController, UIGestureRecognizerDelegate 
     // MARK: UI
     
     func layout(){
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
-        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
-    }
-    
-    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-        guard let navigationController = self.navigationController else { return false }
-        if (navigationController.viewControllers.count > 1) {
-            return true;
-        }
-        return false;
+        self.checkFavorite()
     }
     
     // MARK: Data
@@ -89,7 +83,9 @@ class MovieDetailsViewController: UIViewController, UIGestureRecognizerDelegate 
     func toggleFavorite(){
         guard let movie = self.movie else { return }
         if self.favoriteKeychain.getBy(id: movie.id) != nil {
-            self.favoriteKeychain.removeOfFavorite(with: movie.id)
+            if(self.favoriteKeychain.removeOfFavorite(with: movie.id)) {
+                self.delegate?.removeMovie(id: movie.id)
+            }
         }else{
             self.favoriteKeychain.addToFavorite(movie: movie)
         }
@@ -97,33 +93,13 @@ class MovieDetailsViewController: UIViewController, UIGestureRecognizerDelegate 
     
     func checkFavorite(){
         guard let movie = self.movie else { return }
-        var image:UIImage = UIImage()
         if self.favoriteKeychain.getBy(id: movie.id) != nil {
-            if #available(iOS 13.0, *) {
-                image = UIImage(systemName: "star.fill")!
-            } else {
-                // Fallback on earlier versions
-            }
+            guard let image = UIImage(named: "star.fill") else { return }
             self.favoriteButton.setImage(image, for: .normal)
         }else {
-            if #available(iOS 13.0, *) {
-                image = UIImage(systemName: "star")!
-            } else {
-                // Fallback on earlier versions
-            }
+            guard let image = UIImage(named: "star") else { return }
             self.favoriteButton.setImage(image, for: .normal)
         }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

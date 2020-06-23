@@ -8,14 +8,14 @@
 
 import UIKit
 
-enum GenreSerialize: String{
-    case id = "id"
-    case name = "name"
-}
-
 class Genre:NSObject, NSCoding {
     let id: Int
     let name: String
+    
+    enum GenreSerialize: String{
+        case id = "id"
+        case name = "name"
+    }
     
     init(id:Int, name:String){
         self.id = id
@@ -25,13 +25,13 @@ class Genre:NSObject, NSCoding {
     // MARK: NSCoding
     
     func encode(with coder: NSCoder) {
-        coder.encode(self.id, forKey: GenreSerialize.id.rawValue)
-        coder.encode(self.name, forKey: GenreSerialize.name.rawValue)
+        coder.encode(self.id, forKey: Genre.self.GenreSerialize.id.rawValue)
+        coder.encode(self.name, forKey: Genre.self.GenreSerialize.name.rawValue)
         
     }
     
     required init?(coder: NSCoder) {
-        self.id = coder.decodeObject(forKey: GenreSerialize.id.rawValue) as! Int
-        self.name = coder.decodeObject(forKey: GenreSerialize.name.rawValue) as! String
+        self.id = coder.decodeInteger(forKey: Genre.self.GenreSerialize.id.rawValue)
+        self.name = coder.decodeObject(forKey: Genre.self.GenreSerialize.name.rawValue) as! String
     }
 }

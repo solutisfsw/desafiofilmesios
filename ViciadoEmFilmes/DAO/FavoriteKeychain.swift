@@ -11,21 +11,21 @@ import KeychainSwift
 
 class FavoriteKeychain {
     static private let keychain = KeychainSwift()
-    static private var favorites:Array<Movie> = []
+    static private var favorites:Array<Movie>?
     let key = "favorites"
     
     func addToFavorite(movie:Movie) -> Bool{
         FavoriteKeychain.favorites = self.restoreData()
-        FavoriteKeychain.favorites.append(movie)
+        FavoriteKeychain.favorites!.append(movie)
         return self.save()
     }
     
     func removeOfFavorite(with id:Int) -> Bool{
         FavoriteKeychain.favorites = self.restoreData()
-        if let index = FavoriteKeychain.favorites.firstIndex(where: { (movie) -> Bool in
+        if let index = FavoriteKeychain.favorites!.firstIndex(where: { (movie) -> Bool in
             return movie.id == id
         }) {
-            FavoriteKeychain.favorites.remove(at: index)
+            FavoriteKeychain.favorites!.remove(at: index)
             return self.save()
         }
         return false
@@ -33,39 +33,31 @@ class FavoriteKeychain {
     
     func getBy(id: Int) -> Movie? {
         FavoriteKeychain.favorites = self.restoreData()
-        return FavoriteKeychain.favorites.first { (movie) -> Bool in
+        return FavoriteKeychain.favorites!.first { (movie) -> Bool in
             return movie.id == id
         }
     }
     
     func restoreData() -> Array<Movie>{
-        //        if (FavoriteKeychain.favorites.count > 0){
-        //            return FavoriteKeychain.favorites
-        //        }
+        if (FavoriteKeychain.favorites != nil){
+            return FavoriteKeychain.favorites!
+        }
         guard let datas = FavoriteKeychain.keychain.getData(self.key) else {
             print("Não foi possível recuperar os dados")
             return []
         }
-        do{
-            guard let data:Array<Movie> = try NSKeyedUnarchiver.unarchiveObject(with: datas) as? Array<Movie> else {
-                print("Não foi possível converter os dados")
-                return []
-            }
-            return data
-        } catch {
-            print(error.localizedDescription)
+        
+        guard let data:Array<Movie> = NSKeyedUnarchiver.unarchiveObject(with: datas) as? Array<Movie> else {
+            print("Não foi possível converter os dados")
             return []
         }
+        return data
+        
     }
     
     private func save() -> Bool{
-        do {
-            let data = try NSKeyedArchiver.archivedData(withRootObject: FavoriteKeychain.favorites)
-            return FavoriteKeychain.keychain.set(data, forKey: self.key)
-        } catch {
-            print(error.localizedDescription)
-            return false
-        }
+        let data = NSKeyedArchiver.archivedData(withRootObject: FavoriteKeychain.favorites!)
+        return FavoriteKeychain.keychain.set(data, forKey: self.key)
     }
     
 }
