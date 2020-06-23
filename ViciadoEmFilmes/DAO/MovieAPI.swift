@@ -62,39 +62,15 @@ class MovieAPI {
     // MARK: API Request Methods
     
     func getPopularMovies(_ completion: @escaping (_ movies: [Movie]) -> Void ){
-        self.getArrayOfResults(urlType: EntryPointType.popular) { (dataArr) in
-            var movies:[Movie] = []
-            for movieDic in dataArr {
-                if let movie = self.populateMovie(movieDic: movieDic){
-                    movies.append(movie)
-                }
-            }
-            completion(movies)
-        }
+        self.getListMovies(entryPoint: EntryPointType.popular, completion: completion)
     }
     
     func getTopRatedMovies(_ completion: @escaping (_ movies: [Movie]) -> Void ){
-        self.getArrayOfResults(urlType: EntryPointType.topRated) { (dataArr) in
-            var movies:[Movie] = []
-            for movieDic in dataArr {
-                if let movie = self.populateMovie(movieDic: movieDic){
-                    movies.append(movie)
-                }
-            }
-            completion(movies)
-        }
+        self.getListMovies(entryPoint: EntryPointType.topRated, completion: completion)
     }
     
     func getMostRecentMovies(_ completion: @escaping (_ movies: [Movie]) -> Void ){
-        self.getArrayOfResults(urlType: EntryPointType.mostRecent) { (dataArr) in
-            var movies:[Movie] = []
-            for movieDic in dataArr {
-                if let movie = self.populateMovie(movieDic: movieDic){
-                    movies.append(movie)
-                }
-            }
-            completion(movies)
-        }
+        self.getListMovies(entryPoint: EntryPointType.mostRecent, completion: completion)
     }
 
     func getDetailsMovie(id:Int, _ completion: @escaping (_ movies: Movie?) -> Void ){
@@ -119,13 +95,14 @@ class MovieAPI {
         guard let overview = movieDic["overview"] as? String else { return nil }
         guard let release_date = movieDic["release_date"] as? String else { return nil }
         guard let poster_path = movieDic["poster_path"] as? String else { return nil }
-        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
         return Movie(
             id: id,
             title: title,
             description: overview,
             image: poster_path,
-            releaseDate: release_date,
+            releaseDate: formatter.date(from: release_date)!,
             genres: genres
         )
     }
@@ -137,6 +114,18 @@ class MovieAPI {
     }
     
     // MARK: API Request Generic
+    
+    private func getListMovies(entryPoint:EntryPointType, completion: @escaping ([Movie])->Void) {
+        self.getArrayOfResults(urlType: entryPoint) { (dataArr) in
+            var movies:[Movie] = []
+            for movieDic in dataArr {
+                if let movie = self.populateMovie(movieDic: movieDic){
+                    movies.append(movie)
+                }
+            }
+            completion(movies)
+        }
+    }
     
     private func getArrayOfResults(urlType: EntryPointType, _ completion: @escaping (_ dataArr:Array<Dictionary<String, Any>>) -> Void) -> Void{
         self.requestAPI(urlType: urlType) { (response) in

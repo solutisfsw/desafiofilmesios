@@ -13,10 +13,10 @@ class Movie {
     let title:String
     let description:String
     let image:String
-    let releaseDate:String
+    let releaseDate:Date
     let genres:[Genre]
     
-    init(id:Int, title:String, description:String, image:String, releaseDate:String, genres:[Genre]){
+    init(id:Int, title:String, description:String, image:String, releaseDate:Date, genres:[Genre]){
         self.id = id
         self.title = title
         self.description = description
