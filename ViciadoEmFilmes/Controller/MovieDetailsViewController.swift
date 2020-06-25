@@ -68,7 +68,7 @@ class MovieDetailsViewController: UIViewController, UIGestureRecognizerDelegate 
             return genre.name
         }
         self.genresLabel.text = genresArr.joined(separator: ", ")
-        if let imageURL:URL = URL(string: "https://image.tmdb.org/t/p/w600_and_h900_bestv2\(movie.image)") {
+        if let imageURL:URL = URL(string: ImagemSizeType.medium(movie.image).url) {
             let options = ImageLoadingOptions(
                 transition: .fadeIn(duration: 0.5)
             )

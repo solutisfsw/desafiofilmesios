@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Genre:NSObject, NSCoding {
+class Genre: NSCoding {
     let id: Int
     let name: String
     

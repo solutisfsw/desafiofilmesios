@@ -31,6 +31,18 @@ enum EntryPointType {
     }
 }
 
+enum ImagemSizeType {
+    case small(String), medium(String)
+    
+    var url: String {
+        switch self {
+        case .small(let imageName):
+            return "https://image.tmdb.org/t/p/w220_and_h330_face\(imageName)"
+        case .medium(let imageName):
+            return "https://image.tmdb.org/t/p/w600_and_h900_bestv2\(imageName)"
+        }
+    }
+}
 
 class MovieAPI {
     
