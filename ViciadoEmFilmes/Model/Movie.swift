@@ -9,7 +9,7 @@
 import UIKit
 
 
-class Movie: NSCoding {
+class Movie:NSObject, NSCoding {
     let id:Int
     let title:String
     let text:String
